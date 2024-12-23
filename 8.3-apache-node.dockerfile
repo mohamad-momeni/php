@@ -7,12 +7,12 @@ LABEL maintainer="Mohamad Momeni"
 RUN a2enmod rewrite
 RUN a2enmod headers
 
-RUN apt-get update && apt-get install -y \ 
+RUN apt-get update && apt-get install --no-install-recommend -y \ 
    # Required for mbstring extension
    libonig-dev \
    # Required for GD extension
    libpng-dev \
-   libjpeg-dev \
+   libjpeg62-turbo-dev \
    libfreetype6-dev \
    # Required for IMAP extension
    libc-client-dev \
@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
    curl \
    cron \
    supervisor \
-   --no-install-recommends && rm -r /var/lib/apt/lists/*
+   && rm -r /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
