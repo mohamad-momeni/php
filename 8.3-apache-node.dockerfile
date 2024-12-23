@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
    # Required for GD extension
    libpng-dev \
    libjpeg-dev \
-   libjpeg62-turbo-dev \
    libfreetype6-dev \
    # Required for IMAP extension
    libc-client-dev \
