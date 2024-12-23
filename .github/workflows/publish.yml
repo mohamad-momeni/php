@@ -25,5 +25,3 @@ jobs:
           file: ${{ matrix.dockerfile }}.dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ matrix.dockerfile }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
