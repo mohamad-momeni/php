@@ -7,7 +7,7 @@ LABEL maintainer="Mohamad Momeni"
 RUN a2enmod rewrite
 RUN a2enmod headers
 
-RUN apt-get update && apt-get install --no-install-recommend -y \ 
+RUN apt-get update && apt-get install -y \ 
    # Required for GD extension
    libpng-dev \
    libjpeg62-turbo-dev \
