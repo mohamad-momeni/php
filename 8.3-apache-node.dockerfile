@@ -8,8 +8,6 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 
 RUN apt-get update && apt-get install --no-install-recommend -y \ 
-   # Required for mbstring extension
-   libonig-dev \
    # Required for GD extension
    libpng-dev \
    libjpeg62-turbo-dev \
@@ -26,11 +24,8 @@ RUN apt-get update && apt-get install --no-install-recommend -y \
    zlib1g-dev \
    # Required for Swoole extension
    libssl-dev \
-   # Best practice packages
-   libcurl4-openssl-dev \
-   apt-transport-https \
-   ca-certificates \
    # Utilities
+   ca-certificates \
    nano \
    wget \
    curl \
