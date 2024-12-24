@@ -2,29 +2,25 @@ FROM composer:2 AS composer
 FROM php:8.3-apache
 
 LABEL maintainer="Mohamad Momeni"
+ENV TZ=Asia/Tehran
 
 RUN a2enmod rewrite
 RUN a2enmod headers
 
 RUN apt-get update && apt-get install -y \ 
    # Required for GD extension
-   libpng-dev \
-   libjpeg62-turbo-dev \
-   libfreetype6-dev \
+   libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
    # Required for IMAP extension
-   libc-client-dev \
-   libkrb5-dev \
+   libc-client-dev libkrb5-dev \
    # Required for LDAP extension
    libldap2-dev \
-   # Required for pcntl extension
-   libpcntl-dev \
    # Required for ZIP extension
-   libzip-dev \
-   zlib1g-dev \
+   libzip-dev zlib1g-dev \
    # Required for Swoole extension
    libssl-dev \
    # Utilities
    ca-certificates \
+   tzdata \
    nano \
    wget \
    curl \
