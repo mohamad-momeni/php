@@ -11,7 +11,7 @@ jobs:
       packages: write
     strategy:
       matrix:
-        dockerfile: ['8.1-apache', '8.1-apache-node', '8.3-apache', '8.3-apache-node']
+        dockerfile: ['8.1-apache', '8.1-apache-node', '8.3-apache', '8.3-apache-node', '8.3-alpine', '8.3-alpine-node']
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
