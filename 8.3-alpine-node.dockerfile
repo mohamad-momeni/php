@@ -19,9 +19,7 @@ RUN apk add --no-cache --update \
     ca-certificates \
     tzdata \
     nano \
-    wget \
     curl \
-    cron \
     supervisor
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
