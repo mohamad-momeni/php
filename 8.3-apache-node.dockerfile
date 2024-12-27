@@ -39,6 +39,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY ixed.8.3.lin /tmp/sourceguardian.so
 COPY --from=node /usr/local/bin/node /usr/local/bin/
 COPY --from=node /usr/local/bin/npm /usr/local/bin/
+COPY --from=node /usr/local/bin/npx /usr/local/bin/
 COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
 
 RUN mv /tmp/sourceguardian.so $(php-config --extension-dir) && echo 'extension=sourceguardian.so' > /usr/local/etc/php/conf.d/docker-php-ext-sourceguardian.ini
