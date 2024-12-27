@@ -10,7 +10,7 @@ RUN apk add --no-cache --update \
     # Required for IMAP extension
     imap-dev krb5-dev \
     # Required for LDAP extension
-    libldap openldap-dev \
+    ldb-dev libldap openldap-dev \
     # Required for ZIP extension
     libzip-dev zlib-dev \
     # Required for Swoole extension
