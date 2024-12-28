@@ -35,8 +35,9 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 COPY ixed.8.3.lin /tmp/sourceguardian.so
 COPY --from=node /usr/local/bin/node /usr/local/bin/
-COPY --from=node /usr/local/bin/npm /usr/local/bin/
-COPY --from=node /usr/local/bin/npx /usr/local/bin/
+COPY --from=node /usr/local/include/node /usr/local/include/node
 COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 RUN mv /tmp/sourceguardian.so $(php-config --extension-dir) && echo 'extension=sourceguardian.so' > /usr/local/etc/php/conf.d/docker-php-ext-sourceguardian.ini
