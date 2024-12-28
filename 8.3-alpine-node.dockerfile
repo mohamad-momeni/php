@@ -1,3 +1,4 @@
+FROM node:22-alpine AS node
 FROM composer:2 AS composer
 FROM php:8.3-cli-alpine
 
