@@ -16,6 +16,7 @@ RUN apk add --no-cache --update \
     # Required for Swoole extension
     openssl-dev \
     # Utilities
+    $PHPIZE_DEPS \
     ca-certificates \
     tzdata \
     nano \
