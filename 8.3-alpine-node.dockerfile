@@ -17,6 +17,9 @@ RUN apk add --no-cache --update \
     openssl-dev \
     # Utilities
     $PHPIZE_DEPS \
+    eudev-libs \
+    libstdc++ \
+    libgcc \
     ca-certificates \
     tzdata \
     nano \
